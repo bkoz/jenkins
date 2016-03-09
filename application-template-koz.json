@@ -227,7 +227,7 @@
             "from": {
               "kind": "ImageStreamTag",
               "namespace": "openshift",
-              "name": "nodejs-010-rhel7:latest"
+              "name": "nodejs:latest"
             }
           }
         },
