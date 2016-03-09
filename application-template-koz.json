@@ -322,6 +322,12 @@
   ],
   "parameters": [
     {
+      "name": "GIT_URI",
+      "displayName": "GIT URI",
+      "description": "Location for GIT repo",
+      "value": "https://github.com/openshift/nodejs-ex.git"
+    },
+    {
       "name": "MEMORY_LIMIT",
       "displayName": "Memory limit",
       "description": "Maximum amount of memory the container can use",
