@@ -218,7 +218,7 @@
         "source": {
           "type": "Git",
           "git": {
-            "uri": "https://github.com/openshift/nodejs-ex.git"
+            "uri": "${GIT_URI}"
           }
         },
         "strategy": {
