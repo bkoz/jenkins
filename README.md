@@ -1,8 +1,9 @@
 # OpenShift jenkins demo
-Taken from https://github.com/openshift/origin/examples/jenkins
+Taken from https://github.com/openshift/origin/tree/master/examples/jenkins
 Adapted for OpenShift Enterprise v3.1
 ```
 $ oc new-project test
+$ oc policy add-role-to-user edit system:serviceaccount:test:default
 $ oc new-app --template=jenkins-ephemeral
 $ oc new-app application-template-koz.json --param=GIT_URI=https://github.com/bkoz/nodejs-ex.git
 $ oc expose service frontend-prod
