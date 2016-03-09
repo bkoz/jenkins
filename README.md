@@ -18,3 +18,8 @@ Visit the Jenkins site and start the build.
 ```
 $ oc get is
 ```
+To manually tag the image stream:
+```
+oc tag origin-nodejs-sample:latest origin-nodejs-sample:prod
+```
+
