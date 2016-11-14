@@ -1,5 +1,6 @@
 # OpenShift/Jenkins demo notes
 Taken from https://github.com/openshift/origin/tree/master/examples/jenkins
+
 Adapted for OpenShift Enterprise v3.2 and will probably not work with v3.3 until I figure out jenkins->openshift authentication.
 ```
 $ git clone https://github.com/bkoz/jenkins.git
