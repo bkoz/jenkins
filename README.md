@@ -16,7 +16,7 @@ Watch for the jenkins pod to become ready and visit it's route.
 ```
 $ oc get pods
 ```
-Login to Jenkins and create a dev and a promote pipeline , one to build the dev image and a second to
+Login to Jenkins and create a buildDev and a promoteToProd pipeline , one to build the dev image and a second to
 tag (promote) the latest dev image to production. Perhaps the 2 pipelines could be stages in a single pipeline with
 an approval process between the stages?
 
