@@ -16,24 +16,20 @@ Watch for the jenkins pod to become ready and visit it's route.
 ```
 $ oc get pods
 ```
-Login to Jenkins and create a buildDev and a promoteToProd pipeline , one to build the dev image and a second to
-tag (promote) the latest dev image to production. Perhaps the 2 pipelines could be stages in a single pipeline with
-an approval process between the stages?
+Login to Jenkins and create the following pipeline job.
 
-Dev pipeline
+DevProd pipeline
 ```
 node {
-       stage 'build'
+       stage 'buildInDev'
        openshiftBuild(buildConfig: 'frontend', showBuildLogs: 'true')
-       stage 'deploy'
+       stage 'deployInDev'
        openshiftDeploy(deploymentConfig: 'frontend')
-}
-```
-Promote pipeline
-```
-node {
-       stage 'tag'
+       stage "deployToProd"
+       input message: 'Promote to production ?', ok: '\'Yes\''
+       echo "Deploying to server."
        openshiftTag(sourceStream: 'origin-nodejs-sample', sourceTag: 'latest', destinationStream: 'origin-nodejs-sample', destinationTag: 'prod')
+       openshiftScale(deploymentConfig: 'frontend-prod',replicaCount: '1')
 }
 ```
 Examine the image streams before and after the Jenkins build and take note of the TAG column.
