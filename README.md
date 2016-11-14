@@ -1,12 +1,12 @@
 # OpenShift/Jenkins demo notes
 Taken from https://github.com/openshift/origin/tree/master/examples/jenkins
-Adapted for OpenShift Enterprise v3.2
+Adapted for OpenShift Enterprise v3.2 and will probably not work with v3.3 until I figure out jenkins->openshift authentication.
 ```
 $ git clone https://github.com/bkoz/jenkins.git
 $ cd jenkins
 $ oc new-project test
 $ oc policy add-role-to-user edit system:serviceaccount:test:default
-$ oc new-app --template=jenkins-ephemeral
+$ oc new-app --template=jenkins-ephemeral --param=JENKINS_PASSWORD=jenkins
 $ oc new-app application-template-koz.json --param=GIT_URI=https://github.com/bkoz/nodejs-ex.git
 $ oc expose service frontend-prod
 $ oc get routes
