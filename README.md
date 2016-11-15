@@ -32,10 +32,9 @@ node {
        openshiftScale(deploymentConfig: 'frontend-prod',replicaCount: '1')
 }
 ```
-Examine the image streams before and after the Jenkins build and take note of the TAG column.
-Visit the Jenkins site and start the dev pipeline.
+Login to the Jenkins console and start the pipeline build. Login to OpenShift to watch the build and deployments. Examine the image streams before and after the Jenkins build and take note of the TAG column.
 
-Use the OpenShift CLI to delete the prod tag:
+If you need to delete the image stream tag, use the OpenShift CLI to delete the prod tag.
 ```
 oc tag origin-nodejs-sample:prod --delete=true
 ```
