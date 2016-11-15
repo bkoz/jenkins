@@ -1,7 +1,7 @@
 # OpenShift/Jenkins demo notes
 Taken from https://github.com/openshift/origin/tree/master/examples/jenkins
 
-Adapted for OpenShift Enterprise v3.2.
+The basic Jenkins pipeline demo adapted for OpenShift Enterprise v3.2.
 ```
 $ git clone https://github.com/bkoz/jenkins.git
 $ cd jenkins
